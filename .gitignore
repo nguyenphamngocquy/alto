@@ -1,0 +1,65 @@
+# Operating system
+.DS_Store
+Thumbs.db
+
+# VS Code / remote runtime state
+.vscode/
+*.code-workspace
+.history/
+
+# Jupyter / Colab temporary files
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+*.nbconvert.ipynb
+.jupyter/
+
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.conda/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Secrets and machine-specific configuration
+.env
+.env.*
+!.env.example
+credentials*.json
+service-account*.json
+token*.json
+
+# Logs and temporary runtime files
+*.log
+nohup.out
+.cache/
+tmp/
+temp/
+
+# Downloaded model weights and local ML caches
+.huggingface/
+huggingface/
+models/
+checkpoints/
+*.ckpt
+*.safetensors
+*.pt
+*.pth
+
+# ALTO generated dataset assets (large and reproducible)
+v*/input/backgrounds/
+v*/input/masks/
+v*/input/semantic_masks/
+
+# ALTO generated visual outputs
+v*/output/images/
+v*/output/candidate_previews/
+v*/output/contact_sheets/
+
+# Per-run intermediate tables; keep aggregate manifests/rankings/summaries tracked
+v*/output/runs.csv
+v*/output/human_review_template.csv
