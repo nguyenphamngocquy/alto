@@ -184,21 +184,3 @@ Tuy nhiên, scorer hiện tại mới đủ dùng cho ranking sơ bộ, chưa đ
 ## 8. Đề xuất cho v1
 
 V1 nên tập trung xây dựng **Context-aware Best-of-N với evaluator đáng tin cậy hơn**, thay vì triển khai ngay toàn bộ adaptive latent refinement.
-
-Các hướng ưu tiên:
-
-1. Mở rộng thiết kế thí nghiệm sang nhiều background sample cho mỗi context, thay vì chỉ một sample specification.
-2. Đánh giá đồng thời within-sample variance và between-sample variance để tách ảnh hưởng của latent seed khỏi sample selection.
-3. Kiểm tra tương quan giữa candidate-selection score trong heap với human success rate, mean generation score và Best-of-N score.
-4. Tách hard validity constraints và soft ranking score.
-5. Dùng person detection chủ yếu như gate, giảm trọng số detection confidence.
-6. Thêm pose estimation để đánh giá tư thế đứng/ngồi và contact.
-7. Thêm reference-object preservation score trong vùng mask.
-8. Đánh giá background/context preservation ở phần mask không thuộc người.
-9. Cải thiện scale score bằng reference object hoặc scene geometry.
-10. Thêm human-crop quality score để phản ánh anatomy và photorealism.
-11. Manual review một subset nhỏ để kiểm định automatic ranking.
-12. Đánh giá Best-of-1, Best-of-4, Best-of-8 và Best-of-16 trên nhiều sample.
-13. Nghiên cứu adaptive budget: dừng sớm với sample dễ và mở rộng tìm kiếm với sample khó.
-
-Sau khi evaluator được kiểm chứng có tương quan với đánh giá con người, phiên bản tiếp theo mới nên sử dụng score này để tinh chỉnh và tìm kiếm latent theo cơ chế ALTO đầy đủ.
